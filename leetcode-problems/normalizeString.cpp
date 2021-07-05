@@ -3,15 +3,14 @@ string normalize(const string &sentence) {
 	//Make the changes in copy, and return it
 	if (copy.size() == 1) {
 		char ch = copy[0];
-		if (ch >= 65) {
-			ch += 32;
-			copy = ch;
-			return copy;
+		if (ch >= 'A' and ch <= 'Z') {
+			ch = tolower(ch);
+			copy[0] = char(ch);
 		} else {
 			ch = toupper(ch);
-			copy = ch;
-			return copy;
+			copy[0] = char(ch);
 		}
+		return copy;
 	}
 	stringstream ss(copy);
 	string token;
