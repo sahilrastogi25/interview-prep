@@ -6,10 +6,10 @@ public:
             return;
         }
         if (isdigit(input[0])) {
-            string result = output;
-            result.push_back(input[0]);
+            string op = output;
+            op.push_back(input[0]);
             input.erase(input.begin());
-            solve(v, input, result);
+            solve(v, input, op);
         }
         else {
             string op1 = output;

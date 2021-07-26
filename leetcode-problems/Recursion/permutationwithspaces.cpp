@@ -18,7 +18,7 @@ public:
   vector<string> permutation(string S) {
     // Code Here
     vector<string>v;
-    string output = "";
+    string output;
     output.push_back(S[0]);
     S.erase(S.begin());
     solve(v, S, output);

@@ -6,22 +6,17 @@ public:
             return;
         }
         if (ones == zeroes) {
-            string op1 = output;
-            op1.push_back('1');
-            n--;
-            ones++;
-            solve(v, op1, ones, zeroes, n);
+            string op = output;
+            op.push_back('1');
+            solve(v, op, ones++, zeroes, n--);
         }
         else {
             string op1 = output;
             string op2 = output;
             op1.push_back('1');
             op2.push_back('0');
-            n--;
-            ones++;
-            solve(v, op1, ones, zeroes, n);
-            zeroes++;
-            solve(v, op2, --ones, zeroes, n);
+            solve(v, op1, ones++, zeroes, n--);
+            solve(v, op2, ones, zeroes++, n--);
         }
         return;
     }

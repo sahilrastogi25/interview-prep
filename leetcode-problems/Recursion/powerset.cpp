@@ -15,11 +15,10 @@ public:
 	}
 	vector<string> AllPossibleStrings(string s) {
 		// Code here
-		string output = "";
+		string output;
 		string input = s;
 		vector<string>v;
 		solve(v, input, output);
-		v.erase(v.begin());
 		sort(v.begin(), v.end());
 		return v;
 	}
