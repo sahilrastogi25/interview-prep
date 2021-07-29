@@ -26,5 +26,4 @@ int shortestCommonSupersequence(string X, string Y, int m, int n)
     int lcs = LCS(X, Y, m, n);
     int ans = m + n - lcs;
     return ans;
-
 }
