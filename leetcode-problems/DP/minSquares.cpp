@@ -1,3 +1,9 @@
+/*
+TC:O(n*sum)
+This problem is exactly similiar to unbounded knapsack however we are not given with the
+weight array/input array
+so if we not given then create our own
+*/
 int solve(vector<int>&v, int n, int sum) {
     int dp[n + 1][sum + 1];
     for (int i = 0; i <= n; i++) {
