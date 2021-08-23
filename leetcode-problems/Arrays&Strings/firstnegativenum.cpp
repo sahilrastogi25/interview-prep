@@ -1,9 +1,9 @@
-vector<long long> printFirstNegativeInteger(long long int a[],
-        long long int n, long long int k) {
-    long long int i = 0, j = 0;
-    list<long long>l;
-    long long int currNum;
-    vector<long long>result;
+#define ll long long
+vector<ll> printFirstNegativeInteger(ll int a[], ll int n, ll int k) {
+    ll int i = 0, j = 0;
+    list<ll>l;
+    ll int currNum;
+    vector<ll>result;
     while (j < n) {
         currNum = a[j];
         if (currNum < 0) {
@@ -14,7 +14,7 @@ vector<long long> printFirstNegativeInteger(long long int a[],
                 result.push_back(0);
             }
             else {
-                long long int el = l.front();
+                ll int el = l.front();
                 if (a[i] == el) {
                     l.pop_front();
                 }
