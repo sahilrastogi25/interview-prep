@@ -33,6 +33,7 @@ int main()
 {
 
 	io();
+	//object of student class
 	Student a;
 	a.setName("Sahil");
 	a.getName();
