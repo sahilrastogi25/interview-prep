@@ -2,7 +2,7 @@ class Solution {
 public:
     int longestMountain(vector<int>& arr) {
         int n = arr.size();
-        int largest = 0;
+        int longest = 0;
         for (int i = 1; i <= n - 2;) {
             if (arr[i] > arr[i - 1] and arr[i] > arr[i + 1]) {
                 int cnt = 1;
@@ -15,11 +15,11 @@ public:
                     i++;
                     cnt++;
                 }
-                largest = max(largest, cnt);
+                longest = max(longest, cnt);
             } else {
                 i++;
             }
         }
-        return largest;
+        return longest;
     }
 };
