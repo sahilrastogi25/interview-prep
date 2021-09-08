@@ -14,7 +14,6 @@ double mySqrt(int x, int p) {
 		}
 	}
 	double inc = 0.1;
-	ans += inc;
 	for (int i = 0; i < p; i++) {
 		while (ans * ans <= x) {
 			ans += inc;

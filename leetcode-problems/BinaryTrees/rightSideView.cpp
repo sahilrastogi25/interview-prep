@@ -1,11 +1,7 @@
 class Solution {
-public:
-    vector<vector<int>> treeTraversal(TreeNode* root) {
-        vector<vector<int>>result;
+    void levelOrder(vector<vector<int>>&ans, TreeNode* root) {
         queue<TreeNode*>q;
-        if (root == NULL) {
-            return result;
-        }
+        if (!root) return;
         q.push(root);
         q.push(NULL);
         vector<int>vec;
@@ -13,13 +9,12 @@ public:
             TreeNode* temp = q.front();
             q.pop();
             if (temp == NULL) {
-                result.push_back(vec);
+                ans.push_back(vec);
                 vec.clear();
                 if (!q.empty()) {
                     q.push(NULL);
                 }
-            }
-            else {
+            } else {
                 vec.push_back(temp->val);
                 if (temp->left) {
                     q.push(temp->left);
@@ -29,18 +24,16 @@ public:
                 }
             }
         }
-        return result;
+        return;
     }
+public:
     vector<int> rightSideView(TreeNode* root) {
-        vector<vector<int>>ans = treeTraversal(root);
-        vector<int>result;
-        for (int i = 0; i < ans.size(); i++) {
-            for (int j = 0; j < ans[i].size(); j++) {
-                if (j == ans[i].size() - 1) {
-                    result.push_back(ans[i][j]);
-                }
-            }
+        vector<vector<int>>ans;
+        vector<int>rightSide;
+        levelOrder(ans, root);
+        for (auto v : ans) {
+            rightSide.push_back(v.back());
         }
-        return result;
+        return rightSide;
     }
 };

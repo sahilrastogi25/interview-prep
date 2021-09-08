@@ -4,6 +4,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     while (n--) {
         fast = fast->next;
     }
+    //If fast becomes null then we want to remove the head
     if (fast == NULL) return head->next;
     fast = fast->next;
     while (fast != NULL) {
